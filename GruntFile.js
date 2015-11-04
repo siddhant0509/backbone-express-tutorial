@@ -2,7 +2,7 @@ module.exports = function(grunt){
   grunt.initConfig({
     concat: {
       dist:{
-        src: ['node_modules/underscore/underscore-min.js','node_modules/backbone/backbone-min.js','node_modules/jquery/dist/jquery.min.js','client/index.js'],
+        src: ['node_modules/jquery/dist/jquery.min.js', 'node_modules/underscore/underscore.js','node_modules/backbone/backbone-min.js','client/*.js'],
         dest: 'dist/built.js',
       },
       html: {

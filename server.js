@@ -9,10 +9,12 @@ var express = require("express"),
     users = []
     publicDir = path.join(__dirname,"/dist");
 
-console.log(publicDir);
 app.use(morgan("dev"));
 app.use(bodyParser());
 app.use(express.static('dist'));
+app.use(express.static("public"));
+
+
 app.get("/", function(req,res){
   var pathFile = path.join(__dirname, "dist/build.html");
   readFile(pathFile,res);
@@ -29,6 +31,21 @@ app.get("/student/:id", function(req,res){
     res.writeHead(500);
     res.end("Error!");
   }
+});
+
+
+app.put("/student", function(req,res){
+  var user = req.body;
+  var existing = _.find(users, function(u){
+    return parseInt(user.id) === u.id
+  });
+  if(existing)
+    update(user,existing);
+  else{
+    users.push(user);
+  }
+  res.send({success: true});
+
 });
 
 app.post("/student", function(req,res){

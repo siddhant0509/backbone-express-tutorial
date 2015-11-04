@@ -1,10 +1,104 @@
+<script type='text/backbone-template' id= 'student-create-form'>
+	<div class='form-horizontal' style='margin-top: 100px;margin-left: 550px;'>
+		<h2 style="margin-left: 350px;">Form</h2>
+		<div class='form-group form-group-sm text-center'>
+			<label class='col-sm-2 control-label' for='formGroupInputLarge'>Id</label>
+    		<div class='col-sm-4'>
+      			<input class='form-control' type='text' id='student_id' placeholder='Student Id'>
+    		</div>
+		</div>
+		<div class='form-group form-group-sm text-center'>
+			<label class='col-sm-2 control-label' for='formGroupInputLarge'>Name</label>
+    		<div class='col-sm-4'>
+      			<input class='form-control' type='text' id='student_name' placeholder='Student Name'>
+    		</div>
+		</div>
+		<div class='form-group form-group-sm text-center'>
+			<label class='col-sm-2 control-label' for='formGroupInputLarge'>Class</label>
+    		<div class='col-sm-4'>
+      			<input class='form-control' type='text' id='student_class' placeholder='Student Class'>
+    		</div>
+		</div>
+		<div class='form-group form-group-sm text-center'>
+			<label class='col-sm-2 control-label' for='formGroupInputLarge'>Country</label>
+    		<div class='col-sm-4'>
+      			<input class='form-control' type='text' id='student_country' placeholder='Student Country'>
+    		</div>
+		</div>
+
+		<input class='btn btn-default' id='studentCreate' type='submit' value='Submit' style="margin-left: 350px;">
+	</div>
+	
+</script>
+
+
+<script type='text/backbone-template' id='students'>
+	<div style="margin-top: 100px;">
+		<h2 class="text-center"> Students </h2>
+		<div id='studentList' style="font-size: x-large;margin-left:550px">		
+			<div class="row" style="font-weight: bold;">
+				<div class='col-md-2'>
+					Id
+				</div>	
+				<div class='col-md-2'>
+					Name
+				</div>	
+				<div class='col-md-2'>
+					Class
+				</div>	
+				<div class='col-md-2'>
+					Country
+				</div>	
+			</div>
+		</div>
+	</div>
+</script>
+
+
+<script type='text/backbone-template' id='student'>
+	<div class="row">
+		<div class='col-md-2'>
+			<%= id %>
+		</div>
+		<div class='col-md-2'>
+			<%= name %>
+		</div>
+		<div class='col-md-2'>
+			<%= st_class %>
+		</div>
+		<div class='col-md-2'>
+			<%= country %>
+		</div>
+	</div>
+</script>
+
+
+<script type='text/backbone-template' id='update-student'>
+</script>
+
+
+<script type='text/backbone-template' id='delete-student'>
+</script>
+
+
+
 <html>
   <head>
     <title>App</title>
-    <script type="text/javascript" src="output.min.js" ></script>
+    <script type='text/javascript' src='built.js' ></script>
+    <link rel='stylesheet' href='css/bootstrap.css' >
   </head>
 
   <body>
-    <h1> Student Details </h1>
+    <h1 class='text-center'> Student Details </h1>
+    <p class='text-center lead'> A test application for Backbone which revolves around model Student. By Default Application <br>
+    	shows all the students. Each Student is an hyperlink which will show that particular student details. Once can also create new students.
+    </p>
+    <div id='container'></div>
+
+    <button type="submit" class="create-student btn btn-primary text-center" style="margin-top:100px;margin-left:900px;">Create</button> 
   </body>
 </html>
+
+
+
